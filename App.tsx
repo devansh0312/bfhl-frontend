@@ -5,7 +5,10 @@ import ResponseDisplay from './components/ResponseDisplay';
 import Loader from './components/Loader';
 import ErrorAlert from './components/ErrorAlert';
 
-// IMPORTANT: Replace this with the URL you got from Vercel in Part 1.
+// ===================================================================================
+//  FINAL STEP: You MUST replace this URL with the real URL of your backend API.
+//  Find it on your Vercel dashboard under your 'bfhl-api' project.
+// ===================================================================================
 const API_ENDPOINT = 'https://bfhl-g8mowv9im-devanshs-projects-0f1df5a7.vercel.app/bfhl'; 
 
 const App: React.FC = () => {
@@ -17,12 +20,6 @@ const App: React.FC = () => {
     setIsLoading(true);
     setError(null);
     setResponse(null);
-
-    if (API_ENDPOINT.includes('YOUR_VERCEL_API_URL')) {
-        setError("Please update the API_ENDPOINT in App.tsx with your deployed backend URL.");
-        setIsLoading(false);
-        return;
-    }
 
     try {
       if (!data.trim()) {
@@ -49,7 +46,13 @@ const App: React.FC = () => {
 
     } catch (e) {
       const err = e as Error;
-      setError(err.message || "An unexpected error occurred.");
+      if (err.message.includes("Failed to fetch")) {
+        setError(
+          "Network Error: Could not connect to the API. The API_ENDPOINT URL in App.tsx is incorrect. Please find the correct URL for your 'bfhl-api' project on Vercel and update the file."
+        );
+      } else {
+        setError(err.message || "An unexpected error occurred.");
+      }
       setResponse(null);
     } finally {
       setIsLoading(false);
