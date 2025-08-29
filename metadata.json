@@ -1,0 +1,5 @@
+{
+  "name": "Data Processor API Frontend",
+  "description": "A user interface to interact with a data processing API. Enter an array of strings to see it categorized into numbers, alphabets, and special characters, along with other calculated values.",
+  "requestFramePermissions": []
+}
