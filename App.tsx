@@ -6,7 +6,7 @@ import Loader from './components/Loader';
 import ErrorAlert from './components/ErrorAlert';
 
 // IMPORTANT: Replace this with the URL you got from Vercel in Part 1.
-const API_ENDPOINT = 'https://bfhl-geleap5vn-devanshs-projects-0f1df5a7.vercel.app/'; 
+const API_ENDPOINT = 'https://bfhl-g8mowv9im-devanshs-projects-0f1df5a7.vercel.app/bfhl'; 
 
 const App: React.FC = () => {
   const [response, setResponse] = useState<ApiResponse | null>(null);
