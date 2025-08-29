@@ -83,6 +83,10 @@ const App: React.FC = () => {
         
         <footer className="text-center mt-8 text-slate-500 text-sm">
           <p>Built with React, TypeScript, and Tailwind CSS</p>
+          <div className="mt-4 text-xs font-mono bg-slate-800 p-2 rounded-lg border border-slate-700">
+            <p className="text-slate-400">DEBUG: API Endpoint currently in use:</p>
+            <p className="text-amber-300 break-all">{API_ENDPOINT}</p>
+          </div>
         </footer>
       </div>
     </div>
